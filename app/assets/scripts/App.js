@@ -2,11 +2,11 @@ import '../styles/styles.css';
 import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/revealOnScroll';
 
-let mobileMenu = new MobileMenu();
-let revealOnScoll = new RevealOnScroll();
+// let revealOnScoll = new RevealOnScroll();
 
-// new RevealOnScroll(document.querySelectorAll('.testimonial'));
-// new RevealOnScroll(document.querySelectorAll('.feature-item'));
+let mobileMenu = new MobileMenu();
+new RevealOnScroll(document.querySelectorAll('.testimonial'), 75);
+new RevealOnScroll(document.querySelectorAll('.feature-item'), 60);
 //
 // alert('Hello World!');
 // make changes if got

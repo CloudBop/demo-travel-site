@@ -2,11 +2,12 @@ import throttle from 'lodash/throttle';
 import debounce from 'lodash/debounce';
 //
 class RevealOnScroll {
-  constructor() {
+  constructor(elements, triggerOffsetPcent = 75) {
     //
     this.scrollThrottle = throttle(this.calcCaller, 200).bind(this);
-    this.itemsToReveal = document.querySelectorAll('.feature-item');
+    this.itemsToReveal = elements;
     this.browserHeight = window.innerHeight;
+    this.triggerOffsetPcent = triggerOffsetPcent;
     this.hideOnInit();
     this.events();
     //
@@ -39,8 +40,8 @@ class RevealOnScroll {
     el.getBoundingClientRect().y 
     */
       // was top for edge, maybe not now they chromium
-      let scrollPcent = el.getBoundingClientRect().y / this.browserHeight * 100;
-      if (scrollPcent < 75) {
+      let scrollPcentOfRelativeViewport = el.getBoundingClientRect().y / this.browserHeight * 100;
+      if (scrollPcentOfRelativeViewport < this.triggerOffsetPcent) {
         el.classList.add('reveal-item--is-visible');
         el.isRevealed = true;
         //
