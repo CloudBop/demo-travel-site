@@ -3,16 +3,16 @@ class Modal {
     this.injectHTML();
     // order of invocation matters
     this.modal = document.querySelector('.modal');
-    this.openModalBtns = document.querySelectorAll('.open-modal');
     this.closeIcon = document.querySelectorAll('.modal__close');
-
     this.events();
+    // lazy-loaded
+    // this.openModalBtns = document.querySelectorAll('.open-modal');
   }
   events() {
-    // open
-    this.openModalBtns.forEach(el => {
-      el.addEventListener('click', evt => this.openTheModal(evt));
-    });
+    // open - lazy loaded in app.js
+    // this.openModalBtns.forEach(el => {
+    //   el.addEventListener('click', evt => this.openTheModal(evt));
+    // });
     // close
     this.closeIcon.forEach(el => {
       el.addEventListener('click', e => this.closeTheModal());
@@ -20,8 +20,8 @@ class Modal {
     // any key
     document.addEventListener('keyup', evt => this.keyPressHandler(evt));
   }
-  openTheModal(evt) {
-    evt.preventDefault();
+  openTheModal() {
+    // evt.preventDefault();
     this.modal.classList.add('modal--is-visible');
   }
   closeTheModal() {
