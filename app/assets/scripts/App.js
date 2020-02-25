@@ -1,4 +1,6 @@
 import '../styles/styles.css';
+// lazysizes doesn't need to anything other than this module
+import 'lazysizes';
 import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/revealOnScroll';
 import StickyHeader from './modules/StickHeader';
