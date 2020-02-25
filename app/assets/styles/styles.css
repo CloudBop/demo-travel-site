@@ -26,3 +26,5 @@ block--modifier
 @import "modules/_site-header";
 @import "modules/_primary-nav";
 @import "modules/_reveal-item.css";
+@import "modules/_modal.css";
+@import "modules/_social-icons.css";
