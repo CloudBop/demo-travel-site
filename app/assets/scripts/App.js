@@ -27,6 +27,7 @@ document.querySelectorAll('.open-modal').forEach(el => {
     }
   });
 });
+alert('hello');
 //
 // alert('Hello World!');
 // make changes if got
